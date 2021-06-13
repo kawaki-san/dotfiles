@@ -1,0 +1,27 @@
+#! /bin/sh
+$HOME/.config/dunst/launch.sh
+$HOME/.config/polybar/launch.sh
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d term dev web reader media studio downloads mail office spotify
+
+bspc config border_width         0
+#bspc config border_radius       10
+bspc config window_gap          12
+bspc config top_padding        0
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^6' state=floating follow=on
+bspc rule -a Code desktop='^2' follow=on
+bspc rule -a firefox desktop='^3' follow=on
+bspc rule -a vlc desktop='^5' follow=on
+bspc rule -a Alacritty desktop='^1' follow=on
+bspc rule -a Spotify desktop='^10' follow=on
+bspc rule -a zathura desktop='4' state=floating follow=on
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+

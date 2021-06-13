@@ -1,0 +1,505 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #26000000
+
+[bar/background]
+enable-ipc = true
+background = ${colors.background}
+height = 30
+width  = 100%
+font-0 = Dank Mono:style=Bold Italic:pixelsize=10;2
+font-1 = CoreUI\-Icons\-Brand:pixelsize=10;2
+font-2 = CoreUI\-Icons\-Free:pixelsize=10;2
+module-margin = 1
+modules-left = spotify-prev spotify-play-pause spotify-next
+padding-left = 117
+override-redirect = true
+wm-restack = bspwm
+
+[bar/left]
+background = #85222222
+radius = 10
+width = 15%
+height = 23
+;modules-left = date
+offset-y = 0.235%
+offset-x = 1%
+line-size = 2
+
+font-0 = Dank Mono:style=Italic:pixelsize=12;2
+font-1 = CoreUI\-Icons\-Free:pixelsize=10;2
+font-2 = CoreUI\-Icons\-Brand:pixelsize=10;2
+font-3 = DankMono Nerd Font:pixelsize=13;2
+font-4 = FluentSystemIcons\-Regular:pixelsize=13;3
+
+
+padding-left = 2
+padding-right = 2
+modules-left = workspaces
+;modules-right = screenshot filemanager
+module-margin = 1
+
+
+[bar/shortcuts]
+background = #85222222
+radius = 10
+width = 8%
+height = 20
+offset-y = 0.45%
+offset-x = 17%
+line-size = 2
+
+font-0 = DankMono Nerd Font:pixelsize=13;2
+font-1 = FluentSystemIcons\-Regular:pixelsize=13;3
+font-2 = CoreUI\-Icons\-Brand:pixelsize=10;2
+padding-left = 2
+padding-right = 2
+modules-center = screenshot filemanager vscode vlc
+module-margin = 1
+
+[bar/media]
+enable-ipc = true
+background = #00000000
+width  = 16%
+height = 20
+offset-y = 0.45%
+offset-x = 26%
+line-size = 2
+
+font-0 = Dank Mono:style=Bold Italic:pixelsize=10;2
+font-1 = CoreUI\-Icons\-Brand:pixelsize=10;2
+font-2 = CoreUI\-Icons\-Free:pixelsize=10;2
+modules-left = cava
+module-margin = 1
+modules-center = spotify
+;modules-right = spotify-prev spotify-play-pause spotify-next 
+
+[bar/mediacontrols]
+enable-ipc = true
+background = #00000000
+width = 4%
+offset-y = 0.45%
+offset-x = 42%
+line-size = 2
+
+font-0 = Dank Mono:style=Bold Italic:pixelsize=10;2
+font-1 = CoreUI\-Icons\-Brand:pixelsize=10;2
+font-2 = CoreUI\-Icons\-Free:pixelsize=10;2
+module-margin = 1
+;modules-right = spotify-prev spotify-play-pause spotify-next 
+padding-left = 1
+
+[bar/datetime]
+background = #85222222
+width = 6%
+height = 20
+radius = 10
+offset-y = 0.45%
+offset-x = 47%
+line-size = 2
+
+font-0 = Inter:style=Regular:pixelsize=10;2
+modules-center = date
+
+[bar/netstuff]
+background = #00000000
+width = 6%
+offset-y = 0.45%
+offset-x = 53.5%
+line-size = 2
+
+font-0 = Inter:pixelsize=10;1
+font-1 = FluentSystemIcons\-Regular:pixelsize=14;2
+modules-center = updates-pacman-aurhelper
+
+[bar/volume]
+background = #85222222
+width = 8%
+height = 20
+radius = 10
+offset-x = 75%
+offset-y = 0.45%
+line-size = 2
+font-0 = Inter:pixelsize=10;1
+font-1 = FluentSystemIcons\-Regular:pixelsize=13;3
+font-2 = FluentSystemIcons\-Filled:pixelsize=13;3
+font-3 = Material Design Icons Desktop:pixelsize=13;3
+
+modules-center = backlight pulseaudio
+padding-left = 2
+module-margin = 1
+padding-right = 2
+
+[bar/battnet]
+background = #85222222
+radius = 10
+width = 15%
+height = 23
+offset-y = 0.235%
+offset-x = 84%
+line-size = 2
+
+font-0 = Dank Mono:style=Italic:pixelsize=12;2
+font-1 = CoreUI\-Icons\-Free:pixelsize=10;2
+font-2 = CoreUI\-Icons\-Brand:pixelsize=10;2
+font-3 = DankMono Nerd Font:pixelsize=13;2
+font-4 = FluentSystemIcons\-Regular:pixelsize=15;4
+
+
+padding-left = 2
+padding-right = 2
+modules-center = wirednetwork wirelessnetwork battery powermenu
+;modules-center = battery
+;modules-right = powermenu
+module-margin = 2
+
+[bar/netspeed]
+enable-ipc = true
+background = #00000000
+width  = 14%
+height = 20
+offset-y = 0.45%
+offset-x = 60%
+line-size = 2
+
+font-0 = Dank Mono:style=Bold Italic:pixelsize=10;2
+font-1 = FluentSystemIcons\-Regular:pixelsize=10;2
+modules-left = memory temp
+module-margin = 1
+modules-center = speed
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+format-charging = %{F#76ED9B}<animation-charging>%{F-} <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = Unplug me
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = %{T5}%{T-}
+ramp-capacity-1 = %{T5}%{T-}
+ramp-capacity-2 = %{T5}%{T-}
+ramp-capacity-3 = %{T5}%{T-}
+ramp-capacity-4 = %{T5}%{T-}
+ramp-capacity-5 = %{T5}%{T-}
+ramp-capacity-6 = %{T5}%{T-}
+ramp-capacity-7 = %{T5}%{T-}
+ramp-capacity-8 = %{T5}%{T-}
+ramp-capacity-9 = %{T5}%{T-}
+ramp-capacity-10 = %{T5}%{T-}
+ramp-capacity-11 = %{T5}%{T-}
+
+animation-charging-0 = %{T5}%{T-}
+animation-charging-1 = %{T5}%{T-}
+animation-charging-2 = %{T5}%{T-}
+animation-charging-3 = %{T5}%{T-}
+animation-charging-4 = %{T5}%{T-}
+animation-charging-5 = %{T5}%{T-}
+animation-charging-6 = %{T5}%{T-}
+animation-charging-7 = %{T5}%{T-}
+animation-charging-8 = %{T5}%{T-}
+animation-charging-9 = %{T5}%{T-}
+
+[module/wirelessnetwork]
+type = internal/network
+interface = wlan0
+interval = 1.0
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %essid%
+label-connected-foreground = #FFFFFF
+label-disconnected = not connected
+label-disconnected-foreground = #66ffffff
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+use-actual-brightness = true
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <ramp> <label>
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 
+ramp-1 = 
+ramp-2 = %{T3}%{T-}
+ramp-3 = %{T3}%{T-}
+ramp-4 = %{T3}%{T-}
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+label-muted =  muted
+label-muted-foreground = #FFFFFF
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+; Right and Middle click
+click-right = pavucontrol
+
+[module/updates-pacman-aurhelper]
+type = custom/script
+exec = ~/.config/polybar/scripts/modules/updates-pacman-aurhelper.sh
+format = <label>
+format-prefix = 
+interval = 600
+
+[module/date]
+type = internal/date
+
+date = %d %b%
+
+time = %l:%M %p% 
+
+label= %time% %date%
+
+
+[module/workspaces]
+type = internal/bspwm
+fuzzy-match = true
+ws-icon-0 = term;
+ws-icon-1 = dev;
+ws-icon-2 = web;%{T3}%{T-}
+ws-icon-3 = reader;%{T3}%{T-}
+ws-icon-4 = media;%{T3}%{T-}
+ws-icon-5 = studio;
+ws-icon-6 = downloads;
+ws-icon-7 = mail;%{T3}%{T-}
+ws-icon-8 = office;%{T3}%{T-}
+ws-icon-9 = spotify;
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(focused|urgent|occupied|empty)>
+;   <label-mode> - gets replaced with <label-(monocle|tiled|fullscreen|floating|locked|sticky|private)>
+; Default: <label-state>
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
+
+; If any values for label-dimmed-N are defined, the workspace/mode
+; colors will get overridden with those values if the monitor is out of focus
+; To only override workspaces in a specific state, use:
+;   label-dimmed-focused
+;   label-dimmed-occupied
+;   label-dimmed-urgent
+;   label-dimmed-empty
+label-dimmed-foreground = #555
+label-dimmed-underline = ${bar/top.background}
+label-dimmed-focused-background = #f00
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-focused = %icon% %name%
+label-focused-foreground = #ffffff
+label-focused-padding = 1
+label-occupied-foreground = #d3d3d3
+;label-focused-background = #4C566A
+label-focused-underline = #4C566A
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-occupied = %icon%
+label-occupied-padding = 1
+;label-occupied-underline = #555555
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-empty = 
+;label-empty-foreground = #55
+
+; The following labels will be used to indicate the layout/mode
+; for the focused workspace. Requires <label-mode>
+;
+; Available tokens:
+;   None
+;label-monocle = 
+;label-tiled = 
+;label-fullscreen = 
+;label-floating = 
+;label-pseudotiled = P
+;label-locked = 
+;label-locked-foreground = #bd2c40
+;label-sticky = 
+;label-sticky-foreground = #fba922
+;label-private = 
+;label-private-foreground = #bd2c40
+;label-marked = M
+
+; Separator in between workspaces
+;label-separator = |
+;label-separator-padding = 1
+label-separator-foreground = #00ffb52a
+
+[module/screenshot]
+type = custom/script
+exec = echo "%{T2}%{T-}" &
+format = "%{F#da294f}<label>%{F-}"
+click-left = ~/.config/sxhkd/scripts/screenshot-region.sh
+click-right = ~/.config/sxhkd/scripts/screenshot.sh
+tail = true
+
+[module/filemanager]
+type = custom/script
+exec = echo "%{T2}%{T-}" &
+format = "%{F#0099ff}<label>%{F-}"
+click-left = ranger
+tail = true
+
+[module/vscode]
+type = custom/script
+exec = echo "%{T2}%{T-}" &
+format = "%{F#0078d7}<label>%{F-}"
+click-left = code
+tail = true
+
+[module/vlc]
+type = custom/script
+exec = echo "%{T2}%{T-}" &
+format = "%{F#e85e00}<label>%{F-}"
+click-left = vlc
+tail = true
+
+[module/powermenu]
+type = custom/script
+exec = echo "%{T5}%{T-}"
+format = <label>
+click-left = ~/.config/rofi/applets/menu/powermenu.sh
+tail = true
+
+
+[module/cava]
+type = custom/script
+tail = true
+exec = python ~/.config/polybar/scripts/modules/cava.py
+
+[module/spotify]
+type = custom/script
+tail = true
+format-prefix = %{F#1DB954} %{F-}
+format = <label>
+format-max-len = 5
+exec = ~/.config/polybar/scripts/modules/scroll_spotify_status.sh
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "%{T3}%{T-}"
+format = <label>
+click-left = playerctl previous spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo "%{T3}%{T-}"
+hook-1 = echo "%{T3}%{T-}"
+initial = 1
+click-left = playerctl play-pause spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo "%{T3}%{T-}"
+format = <label>
+click-left = playerctl next spotify
+
+[module/speed]
+type = internal/network
+interface = wlan0
+interval = 3.0
+;udspeed-minwidth = 5
+accumulate-stats = true
+unknown-as-up = true
+label-connected = %downspeed:9% %upspeed:9% 
+
+[module/memory]
+type = internal/memory
+format = <label>
+label = %percentage_used%%
+format-prefix =   
+interval = 3
+
+[module/temp]
+type = internal/temperature
+thermal-zone = 0
+base-temperature = 20
+warn-temperature = 60
+format = <label>
+format-prefix = 
+interval = 1
+
+[module/bluetooth]
+type = custom/script
+exec = rofi-bluetooth --status
+interval = 1
+click-left = rofi-bluetooth &
+
+; vim:ft=dosini
+ 
+
