@@ -4,7 +4,7 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 fi
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.config/zsh/.histfile
+HISTFILE=~/.cache/zsh/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 #setopt autocd nomatch
@@ -83,3 +83,8 @@ man() {
     LESS_TERMCAP_ue=$'\e[0m' \
     command man "$@"
 }
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
